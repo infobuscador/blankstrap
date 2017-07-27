@@ -20,3 +20,15 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+
+<div class="topbar">
+    <div class="row">
+        <div class="col-sm-8">
+            Top menu
+        </div>
+        <div class="col-sm-4">
+            Phone
+        </div>
+    </div>
+</div>

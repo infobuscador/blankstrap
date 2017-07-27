@@ -1,5 +1,19 @@
 <?php
 
+
+function blankstrap_menus() {
+    register_nav_menu('topbar-menu',__( 'Topbar Menu' ));
+    register_nav_menu('main-menu',__( 'Main Menu' ));
+    register_nav_menu('bottombar-menu',__( 'Bottom Bar Menu' ));
+}
+
+
+add_action( 'init', 'blankstrap_menus' );
+
+
+
+
+
 add_filter('get_the_archive_title', 'archive_title');
 
 
