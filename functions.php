@@ -2,6 +2,21 @@
 require_once 'admin/admin-init.php';
 require_once 'walker.php';
 
+
+function get_redux($param){
+    global $bstrap;
+
+    $output = $bstrap;
+
+    if($bstrap[$param]){
+        $output = $bstrap[$param];
+    }
+
+    return $output;
+}
+
+
+
 function blankstrap_menus() {
     register_nav_menu('topbar-menu',__( 'Topbar Menu' ));
     register_nav_menu('main-menu',__( 'Main Menu' ));

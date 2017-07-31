@@ -22,6 +22,8 @@
 <body <?php body_class(); ?>>
 
 
+
+
 <div class="topbar">
     <div class="container">
         <div class="row">
@@ -39,7 +41,7 @@
                 ]); ?>
             </div>
             <div class="col-sm-4">
-                Phone
+                <i class="fa fa-phone-square"></i> <?php echo get_redux('phone'); ?>
             </div>
         </div>
     </div>
