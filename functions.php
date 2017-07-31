@@ -1,5 +1,6 @@
 <?php
-
+require_once 'admin/admin-init.php';
+require_once 'walker.php';
 
 function blankstrap_menus() {
     register_nav_menu('topbar-menu',__( 'Topbar Menu' ));

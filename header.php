@@ -23,12 +23,24 @@
 
 
 <div class="topbar">
-    <div class="row">
-        <div class="col-sm-8">
-            Top menu
-        </div>
-        <div class="col-sm-4">
-            Phone
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <?php wp_nav_menu([
+                    'menu' => 'top-menu',
+                    'theme_location' => 'topbar-menu',
+                    'depth' => 2,
+                    'container' => 'div',
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id' => 'bs-example-navbar-collapse-1',
+                    'menu_class' => 'nav navbar-nav',
+                    'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                    'walker' => new wp_bootstrap_navwalker()
+                ]); ?>
+            </div>
+            <div class="col-sm-4">
+                Phone
+            </div>
         </div>
     </div>
 </div>
