@@ -1,3 +1,4 @@
 <?php get_header(); ?>
-front-page.php
+<?php layerslider(1); ?>
 <?php get_footer(); ?>
+

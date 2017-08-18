@@ -3,13 +3,18 @@ require_once 'admin/admin-init.php';
 require_once 'walker.php';
 
 
-function get_redux($param){
-    global $bstrap;
 
-    $output = $bstrap;
+
+function get_redux($param, $key = null){
+    global $bstrap;
+    $output = null;
 
     if($bstrap[$param]){
         $output = $bstrap[$param];
+    }
+
+    if(array_key_exists($key, $output)){
+        $output = $output[$key];
     }
 
     return $output;

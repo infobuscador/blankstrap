@@ -22,12 +22,10 @@
 <body <?php body_class(); ?>>
 
 
-
-
 <div class="topbar">
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8 text-left">
                 <?php wp_nav_menu([
                     'menu' => 'top-menu',
                     'theme_location' => 'topbar-menu',
@@ -40,8 +38,38 @@
                     'walker' => new wp_bootstrap_navwalker()
                 ]); ?>
             </div>
-            <div class="col-sm-4">
-                <i class="fa fa-phone-square"></i> <?php echo get_redux('phone'); ?>
+            <div class="col-sm-4 text-right">
+                <a class="phone" rel="nofollow" href="tel:<?php echo str_replace(' ', '', get_redux('phone')); ?>">
+                    <i class="fa fa-phone-square"></i> <?php echo get_redux('phone'); ?>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="main-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 text-left">
+                <?php if(get_redux('logo', 'url')): ?>
+                    <img src="<?php echo get_redux('logo', 'url'); ?>" alt="<?php bloginfo('name'); ?>" class="main-logo"/>
+                <?php else: ?>
+                    <strong><?php bloginfo('name'); ?></strong>
+                <?php endif; ?>
+            </div>
+            <div class="col-sm-9 text-right">
+                <?php wp_nav_menu([
+                    'menu' => 'main-menu',
+                    'theme_location' => 'main-menu',
+                    'depth' => 2,
+                    'container' => 'div',
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id' => 'bs-example-navbar-collapse-1',
+                    'menu_class' => 'nav navbar-nav pull-right',
+                    'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                    'walker' => new wp_bootstrap_navwalker()
+                ]); ?>
             </div>
         </div>
     </div>
